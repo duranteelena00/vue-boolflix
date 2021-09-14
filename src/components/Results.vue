@@ -1,8 +1,8 @@
 <template>
   <section :id="id">
-    <div class="row">
-    <h2>{{ title }}</h2>
-      <div class="col" v-for="item in items" :key="item.id">
+    <div class="row justify-content-sm-start">
+      <h2 v-if="items.length">{{ title }}</h2>
+      <div class="col justify-content-sm-start" v-for="item in items" :key="item.id">
         <Card :item="item" />
       </div>
     </div>
@@ -22,14 +22,18 @@ export default {
 </script>
 
 <style scoped>
-h2 {
+.row {
   margin-bottom: 40px;
 }
 
-.col {
-   display: flex;
-    justify-content: center;
-    align-items: center;
+h2 {
+  margin-bottom: 35px;
+  color: #e5e5e5;
 }
 
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

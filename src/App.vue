@@ -8,10 +8,7 @@
     </header>
     <div class="main">
       <div class="container">
-        <h2>{{ title }}</h2>
         <Results title="Film" id="film" :items="movies" />
-        <hr class="my-5" />
-        <h2>{{ title }}</h2>
         <Results title="Serie TV" id="series" :items="series" />
       </div>
     </div>
@@ -135,7 +132,4 @@ main {
   }
 }
 
-hr {
-  opacity: 0.2;
-}
 </style>
