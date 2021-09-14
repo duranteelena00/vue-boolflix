@@ -1,7 +1,7 @@
 <template>
   <section :id="id">
+    <div class="row">
     <h2>{{ title }}</h2>
-    <div class="row flex-column">
       <div class="col" v-for="item in items" :key="item.id">
         <Card :item="item" />
       </div>
@@ -22,7 +22,14 @@ export default {
 </script>
 
 <style scoped>
-.row {
-  margin-top: 125px;
+h2 {
+  margin-bottom: 40px;
 }
+
+.col {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 </style>

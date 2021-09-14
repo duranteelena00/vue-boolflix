@@ -6,12 +6,15 @@
         <Search @search="getResults" />
       </div>
     </header>
-    <main>
+    <div class="main">
       <div class="container">
+        <h2>{{ title }}</h2>
         <Results title="Film" id="film" :items="movies" />
+        <hr class="my-5" />
+        <h2>{{ title }}</h2>
         <Results title="Serie TV" id="series" :items="series" />
       </div>
-    </main>
+    </div>
   </div>
 </template>
 
@@ -72,19 +75,13 @@ export default {
 
 html,
 body {
+  padding-top: 70px;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
   background-color: #111010;
-  font-family: sans-serif,Helvetica, Arial;
+  font-family: sans-serif, Helvetica, Arial;
   color: white;
-}
-
-.container {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 ul {
@@ -93,11 +90,18 @@ ul {
 
 /* Header */
 header {
+  width: 100%;
   height: 70px;
   background: #0d0c0d;
-  position: fixed;
+  position: absolute;
+  top: 0;
   z-index: 1;
-  width: 100%;
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   img.logo {
     height: 30px;
   }
@@ -119,5 +123,19 @@ button {
   i {
     color: rgb(138, 135, 135);
   }
+}
+
+/* Main */
+main {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+hr {
+  opacity: 0.2;
 }
 </style>

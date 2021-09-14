@@ -1,8 +1,6 @@
 <template>
   <ul class="card" :key="item.id">
-    <li class="title">
-        title: "{{ item.title || item.name }}"
-    </li>
+    <li class="title">title: "{{ item.title || item.name }}"</li>
     <li class="original-title" v-if="item.original_title || item.original_name">
       original title: "{{ item.original_title || item.original_name }}"
     </li>
@@ -18,11 +16,14 @@
       <span class="lang" v-else>{{ item.original_language }}</span>
     </li>
     <li class="stars">
-        <i v-for="n in 5" :key="n" :class=" n <= vote ? 'fas' : 'far'" class="fa-star"></i>
+      <i
+        v-for="n in 5"
+        :key="n"
+        :class="n <= vote ? 'fas' : 'far'"
+        class="fa-star"
+      ></i>
     </li>
-    <li class="overview" v-if="item.overview">
-        overview: {{ item.overview }}
-    </li>
+    <li class="overview" v-if="item.overview">overview: {{ item.overview }}</li>
     <li>
       <img
         class="poster"
@@ -56,20 +57,13 @@ export default {
       return require(`@/assets/images/${this.item.original_language}.png`);
     },
     vote() {
-        return Math.ceil(this.item.vote_average / 2)
-    }
+      return Math.ceil(this.item.vote_average / 2);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
 .card {
   margin-bottom: 125px;
   padding: 25px 45px 0 25px;
@@ -78,6 +72,7 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   &:hover {
     transform: scale(1.1);
     font-size: 17px;
