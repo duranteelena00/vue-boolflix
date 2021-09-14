@@ -6,8 +6,15 @@
       v-model.trim="inputValue"
       @keyup.enter="emitSearch"
     />
-    <button type="submit" @click="emitSearch">
-      <i class="fas fa-search"></i>
+    <button
+      type="submit"
+      class="btn btn-secondary"
+      data-toggle="tooltip"
+      data-placement="left"
+      title="Tooltip on left"
+      @click="emitSearch"
+    >
+      <i class="fas fa-search ps-2 pe-2"></i>
     </button>
   </div>
 </template>
@@ -28,5 +35,30 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+div {
+  display: flex;
+  align-items: center;
+}
+
+input,
+button {
+  padding: 0 7.5px;
+  height: 38px;
+  background: transparent;
+  border: none;
+}
+
+input {
+  border: 1px solid white;
+  color: white;
+}
+
+button { 
+  i {
+    color: white;
+    font-size: 25px;
+  }
+}
+
 </style>

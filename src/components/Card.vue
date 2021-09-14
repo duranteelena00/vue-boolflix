@@ -72,7 +72,6 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   &:hover {
     transform: scale(1.1);
     font-size: 17px;

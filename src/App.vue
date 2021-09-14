@@ -3,7 +3,11 @@
     <header>
       <div class="container">
         <img class="logo" src="@/assets/images/Boolflix_logo.png" alt="" />
-        <Search @search="getResults" />
+        <div class="d-flex align-items-center">
+        <Search class="mx-3" @search="getResults" />
+        <i class="fas fa-bell mx-3"></i>
+          <img class="user-icon ms-3" src="@/assets/images/user_icon.png" alt="" />
+        </div>
       </div>
     </header>
     <div class="main">
@@ -100,25 +104,14 @@ header {
     align-items: center;
   }
   img.logo {
-    height: 30px;
+    height: 40px;
   }
-}
-
-input,
-button {
-  padding: 0 7.5px;
-  height: 25px;
-  border: none;
-}
-
-input {
-  border-radius: 5px 0 0 5px;
-}
-
-button {
-  border-radius: 0 5px 5px 0;
-  i {
-    color: rgb(138, 135, 135);
+  div>i {
+    font-size: 30px;
+  }
+  img.user-icon {
+    height: 50px;
+    border-radius: 7.5px;
   }
 }
 
