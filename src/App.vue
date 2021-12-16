@@ -11,7 +11,7 @@
       </div>
     </header>
     <div class="main">
-      <div class="container">
+      <div class="container-fluid">
         <Results title="Film" id="film" :items="movies" />
         <Results title="Serie TV" id="series" :items="series" />
       </div>
@@ -60,6 +60,7 @@ export default {
       };
       axios.get(`${this.api.baseUri}/${endPoint}`, params).then((res) => {
         this[entity] = res.data.results;
+        console.dir(res)
       });
     },
   },
@@ -74,13 +75,13 @@ export default {
   box-sizing: border-box;
 }
 
-html,
+
 body {
   padding-top: 70px;
   width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  background-color: #111010;
+  max-height: 100vh;
+  overflow: hidden;
+  background-color: black;
   font-family: sans-serif, Helvetica, Arial;
   color: white;
 }
